@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'fruit_app',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +49,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware';
+    # Wenn Probleme auftreten
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5500'
 ]
 
 ROOT_URLCONF = 'core.urls'
