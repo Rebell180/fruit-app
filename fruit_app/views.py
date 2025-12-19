@@ -4,31 +4,11 @@ from django.http import JsonResponse
 # Create your views here.
 
 def send_fruits(request):
-    fruits = (
-            {
-                "name" : "Apple",
-                "weight" : "200 gr.",
-                "color" : "red"
-            },
-            {
-                "name" : "Orange",
-                "weight" : "180 gr.",
-                "color" : "orange"
-            },
-            {
-                "name" : "Banana",
-                "weight" : "140 gr.",
-                "color" : "yellow"
-            },
-            {
-                "name" : "Pineapple",
-                "weight" : "600 gr.",
-                "color" : "yellow"
-            },
-            {
-                "name" : "Cherry",
-                "weight" : "10 gr.",
-                "color" : "red"
-            }
-        )
-    return JsonResponse(fruits, safe=False)
+    fruits = [
+        {"name": "Apple", "weight": 100, "color": "red"},
+        {"name": "Banana", "weight": 120, "color": "yellow"},
+        {"name": "Orange", "weight": 150, "color": "orange"},
+        {"name": "Pear", "weight": 130, "color": "green"},
+        {"name": "Cherry", "weight": 10, "color": "red"}
+    ]
+    return render(request, "fruit_app/fruitlist.html", { "fruits": fruits })
