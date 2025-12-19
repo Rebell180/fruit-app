@@ -33,3 +33,10 @@ htmcov/
 # --- System Files ---
 .DS_Store
 Thumbs.db
+
+# --- Database ---
+db.sqlite3
+db.sqlite3-journal
+
+# --- Data / Files ---
+media/
